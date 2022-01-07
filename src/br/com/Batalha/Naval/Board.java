@@ -15,21 +15,18 @@ public class Board {
         Board.boardTabPlayer = boardTab;
     }
 
-    public static String[][] getBoardTabEnyme() {
+    public static String[][] getBoardEnyme() {
         return boardTabEnyme;
     }
 
-    public static void setBoardTabEnyme(String[][] boardTabEnyme) {
+    public static void setBoardEnyme(String[][] boardTabEnyme) {
         Board.boardTabEnyme = boardTabEnyme;
     }
 
     static void renderBoard(String[][] board, PlayerType playerType) {
 
-        CreateShip.renderShip(PlayerType.PLAYER);
-        CreateShip.renderShip(PlayerType.ENEMY);
-
         String[] colLegend = {" ", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
-        System.out.println("-----------------------------------------");
+        System.out.println("--------------------------------------------");
         if(playerType.name() == "PLAYER"){
             System.out.println("                  JOGADOR                   ");
         }else {
@@ -37,12 +34,11 @@ public class Board {
         }
         for (int line = 0; line < 11; line++) {
             if(line==1){
-                System.out.println("\n-----------------------------------------");
+                System.out.println("\n--------------------------------------------");
             }else {
-                System.out.println("-----------------------------------------");
+                System.out.println("--------------------------------------------");
             }
             for (int col = 0; col < 11; col++) {
-
                 if(line == 0 && col > 0){
                     System.out.printf("| %s ", col-1);
                 }
@@ -52,7 +48,7 @@ public class Board {
                 else if (col == 10) {
                     System.out.printf("|\n");
                 }
-                else if(col > 0 && line > 0){
+                else {
                     System.out.printf("| %s ", board[line][col]);
                 }
             }

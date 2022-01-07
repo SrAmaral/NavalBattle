@@ -26,7 +26,7 @@ public class CreateShip {
             if (player.name() == "PLAYER") {
                 Board.setBoardPlayer(locale);
             } else {
-                Board.setBoardTabEnyme(locale);
+                Board.setBoardEnyme(locale);
             }
         }
 
@@ -42,13 +42,13 @@ public class CreateShip {
                 }
             }
         } else {
-            String board[][] = Board.getBoardTabEnyme();
-            for (int line = 0; line < Board.getBoardTabEnyme().length; line++) {
-                for (int col = 0; col < Board.getBoardTabEnyme().length; col++) {
+            String board[][] = Board.getBoardEnyme();
+            for (int line = 0; line < Board.getBoardEnyme().length; line++) {
+                for (int col = 0; col < Board.getBoardEnyme().length; col++) {
                     if(board[line][col] != "N"){
                         locale[line][col] = " ";
 
-                        Board.setBoardTabEnyme(locale);
+                        Board.setBoardEnyme(locale);
                     }
                 }
             }
