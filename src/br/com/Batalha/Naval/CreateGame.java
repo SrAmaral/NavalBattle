@@ -14,6 +14,7 @@ public class CreateGame {
             String nowShootY;
             String auxCamp[][];
 
+
             while(true){
                 auxCamp= Board.getBoardPlayer();
                 System.out.println("Informe uma letra de A a J");
