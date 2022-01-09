@@ -2,6 +2,9 @@ package br.com.Batalha.Naval;
 import java.util.Random;
 import java.util.function.Function;
 
+import static br.com.Batalha.Naval.Board.getCountShipEnemy;
+import static br.com.Batalha.Naval.Board.getCountShipPlayer;
+
 public class CreateShip {
     public static void renderShip(PlayerType player){
         Random randomShip = new Random();
@@ -10,15 +13,16 @@ public class CreateShip {
         int localsY[] = new int[11];
 
         for (int n = 0; n < 10; n++){
-                localsX[n] = (randomShip.nextInt(10));
+                localsX[n] = Math.round(randomShip.nextInt(100)/10);
                 if(localsX[n] == 0){
                     localsX[n]++;
                 }
-                localsY[n] = (randomShip.nextInt(10));
+                localsY[n] = Math.round(randomShip.nextInt(100)/10);
                 if(localsY[n] == 0){
                     localsY[n]++;
                 }
         }
+
 
         String locale[][] = new String [11][11];
         for(int n = 0; n < 10; n++){
@@ -38,6 +42,8 @@ public class CreateShip {
                         locale[line][col] = " ";
 
                         Board.setBoardPlayer(locale);
+                    }else {
+                        Board.setCountShipPlayer(getCountShipPlayer() + 1);
                     }
                 }
             }
@@ -49,6 +55,9 @@ public class CreateShip {
                         locale[line][col] = " ";
 
                         Board.setBoardEnyme(locale);
+                    }
+                    else {
+                        Board.setCountShipEnemy(getCountShipEnemy() + 1);
                     }
                 }
             }

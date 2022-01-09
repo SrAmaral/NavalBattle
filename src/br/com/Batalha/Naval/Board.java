@@ -6,6 +6,24 @@ public class Board {
     public static String boardTabPlayer[][] = new String [11][11];
     public static String boardTabEnyme[][] = new String [11][11];
 
+    public static int countShipPlayer = 0;
+    public static int countShipEnemy = 0;
+
+    public static int getCountShipPlayer() {
+        return countShipPlayer;
+    }
+
+    public static void setCountShipPlayer(int countShipPlayer) {
+        Board.countShipPlayer = countShipPlayer;
+    }
+
+    public static int getCountShipEnemy() {
+        return countShipEnemy;
+    }
+
+    public static void setCountShipEnemy(int countShipEnemy) {
+        Board.countShipEnemy = countShipEnemy;
+    }
 
     public static String[][] getBoardPlayer() {
         return boardTabPlayer;
