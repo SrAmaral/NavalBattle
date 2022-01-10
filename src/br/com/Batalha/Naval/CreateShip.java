@@ -26,7 +26,17 @@ public class CreateShip {
 
         String locale[][] = new String [11][11];
         for(int n = 0; n < 10; n++){
-            locale[localsX[n]][localsY[n]] = "N";
+            if(locale[localsX[n]][localsY[n]] != "N"){
+                locale[localsX[n]][localsY[n]] = "N";
+            }else {
+                if(localsX[n] < 11 && localsY[n] < 11){
+                    locale[localsX[n+1]][localsY[n+1]] = "N";
+                }else{
+                    locale[localsX[n-1]][localsY[n-1]] = "N";
+                }
+
+            }
+
             if (player.name() == "PLAYER") {
                 Board.setBoardPlayer(locale);
             } else {

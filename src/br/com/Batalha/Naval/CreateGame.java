@@ -10,7 +10,6 @@ public class CreateGame {
             Board.renderBoard(Board.getBoardPlayer(),PlayerType.PLAYER);
             CreateShip.renderShip(PlayerType.ENEMY);
             System.out.printf("Para o inimigo restam: %s navios \nPara o Player restam: %s navios \n", Board.getCountShipEnemy(), Board.getCountShipPlayer());
-            Board.renderBoard(Board.getBoardEnyme(),PlayerType.ENEMY);
 
 
             Scanner sc = new Scanner(System.in);
