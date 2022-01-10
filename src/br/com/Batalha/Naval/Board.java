@@ -50,20 +50,20 @@ public class Board {
         }else {
             System.out.println("                  MÁQUINA                   ");
         }
-        for (int line = 0; line < 11; line++) {
+        for (int line = 0; line < board.length; line++) {
             if(line==1){
-                System.out.println("\n--------------------------------------------");
+                System.out.println("--------------------------------------------");
             }else {
                 System.out.println("--------------------------------------------");
             }
-            for (int col = 0; col < 11; col++) {
-                if(line == 0 && col > 0){
+            for (int col = 0; col <= board.length; col++) {
+                if(line == 0 && col > 0 && col < board.length){
                     System.out.printf("| %s ", col-1);
                 }
                 else if(col == 0 && line > 0){
                     System.out.printf("| %s ", colLegend[line]);
                 }
-                else if (col == 10) {
+                else if (col == board.length) {
                     System.out.printf("|\n");
                 }
                 else {

@@ -82,7 +82,6 @@ public class Shoot {
         String[] colLegend = {" ", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
 
         Board.renderBoard(Board.getBoardPlayer(), PlayerType.PLAYER);
-        Board.renderBoard(Board.getBoardEnyme(), PlayerType.ENEMY);
 
         if(isEnemyHit) {
             System.out.printf("O inimigo acertou seu navio em: %s - %s\n", colLegend[localsX], localsY-1);
