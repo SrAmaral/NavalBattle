@@ -24,8 +24,16 @@ public class CreateGame {
                 playerCamp= Board.getBoardPlayer();
                 System.out.println("Informe uma letra de A a J");
                 nowShootY = sc.next();
+                while(Controler.control(nowShootY) == 0){
+                    System.out.println("Entrada invalida! Informe uma letra de A a J");
+                    nowShootY = sc.next();
+                }
                 System.out.println("Informe uma numero de 0 a 9");
                 nowShootX = sc.next();
+                while(Controler.control(nowShootX) == 0){
+                    System.out.println("Entrada invalida! Informe uma numero de 0 a 9");
+                    nowShootX = sc.next();
+                }
                 Shoot.areaShoot(playerCamp, enemyCamp ,nowShootY, nowShootX);
 
                 if(Board.getCountShipEnemy() == 0){
